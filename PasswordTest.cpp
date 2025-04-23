@@ -34,8 +34,32 @@ TEST(PasswordTest, empty_string)
 	ASSERT_EQ(0, my_password.count_leading_characters(""));
 }
 
+TEST(PasswordTest, max_char_string)
+{
+	Password my_password;
+	ASSERT_FALSE(my_password.is_too_long("Password1"));
+}
+
+TEST(PasswordTest, min_char_string)
+{
+	Password my_password;
+	ASSERT_FALSE(my_password.is_too_short("Password1"));
+}
+
 TEST(PasswordTest, mixed_case_string)
 {
 	Password my_password;
-	ASSERT_TRUE(my_password.has_mixed_case("Password"));
+	ASSERT_TRUE(my_password.has_mixed_case("Password1"));
+}
+
+TEST(PasswordTest, lower_case_string)
+{
+	Password my_password;
+	ASSERT_TRUE(my_password.has_mixed_case("Password1"));
+}
+
+TEST(PasswordTest, aplha_numeric_string)
+{
+	Password my_password;
+	ASSERT_TRUE(my_password.is_alpha_num("Password1"));
 }
