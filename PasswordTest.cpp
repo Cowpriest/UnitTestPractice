@@ -55,7 +55,7 @@ TEST(PasswordTest, mixed_case_string)
 TEST(PasswordTest, lower_case_string)
 {
 	Password my_password;
-	ASSERT_TRUE(my_password.has_mixed_case("Password1"));
+	ASSERT_FALSE(my_password.has_mixed_case("password1"));
 }
 
 TEST(PasswordTest, aplha_numeric_string)
