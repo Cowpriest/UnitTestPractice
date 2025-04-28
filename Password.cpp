@@ -43,24 +43,24 @@ int Password::count_leading_characters(string phrase){
 // }
 
 // Implementation A
-// #include <cctype>
-// bool Password::has_mixed_case(string str)
-// {
-//   bool has_lower = false;
-//   bool has_upper = false;
-//   for (char ch : str)
-//   {
-//     if (std::islower(ch))
-//     {
-//       has_lower = true;
-//     }
-//     else if (std::isupper(ch))
-//     {
-//       has_upper = true;
-//     }
-//   }
-//   return has_lower && has_upper;
-// }
+#include <cctype>
+bool Password::has_mixed_case(string str)
+{
+  bool has_lower = false;
+  bool has_upper = false;
+  for (char ch : str)
+  {
+    if (islower(ch))
+    {
+      has_lower = true;
+    }
+    else if (isupper(ch))
+    {
+      has_upper = true;
+    }
+  }
+  return has_lower && has_upper;
+}
 
 // Implementation B
 // bool Password::has_mixed_case(string str)
@@ -116,19 +116,19 @@ int Password::count_leading_characters(string phrase){
 // }
 
 // Implementation E
-bool Password::has_mixed_case(string str)
-{
-  bool found = false;
-  for(char c : str){
-    if( !found && c >= 'A' && c <= 'Z' ){
-      found = true;
-    }
-    else if( found && c >= 'a' && c <= 'z'){
-      return true;
-    }
-  }
-  return false;
-}
+// bool Password::has_mixed_case(string str)
+// {
+//   bool found = false;
+//   for(char c : str){
+//     if( !found && c >= 'A' && c <= 'Z' ){
+//       found = true;
+//     }
+//     else if( found && c >= 'a' && c <= 'z'){
+//       return true;
+//     }
+//   }
+//   return false;
+// }
 
 bool Password::is_too_long(string pass){
   int MAX_SIZE = 10;

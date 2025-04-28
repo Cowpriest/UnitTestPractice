@@ -52,6 +52,12 @@ TEST(PasswordTest, mixed_case_string)
 	ASSERT_TRUE(my_password.has_mixed_case("Password1"));
 }
 
+TEST(PasswordTest, not_mixed_case_string)
+{
+	Password my_password;
+	ASSERT_FALSE(my_password.has_mixed_case("Password1"));
+}
+
 TEST(PasswordTest, lower_case_string)
 {
 	Password my_password;
